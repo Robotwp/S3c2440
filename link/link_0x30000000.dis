@@ -1,0 +1,23 @@
+
+link_elf_0x30000000:     file format elf32-littlearm
+
+Disassembly of section .text:
+
+30000000 <_start>:
+30000000:	eaffffff 	b	30000004 <step1>
+
+30000004 <step1>:
+30000004:	e59ff000 	ldr	pc, [pc, #0]	; 3000000c <step2+0x4>
+
+30000008 <step2>:
+30000008:	eafffffe 	b	30000008 <step2>
+3000000c:	30000008 	.word	0x30000008
+Disassembly of section .ARM.attributes:
+
+00000000 <.ARM.attributes>:
+   0:	00001741 	andeq	r1, r0, r1, asr #14
+   4:	61656100 	cmnvs	r5, r0, lsl #2
+   8:	01006962 	tsteq	r0, r2, ror #18
+   c:	0000000d 	andeq	r0, r0, sp
+  10:	00543405 	subseq	r3, r4, r5, lsl #8
+  14:	01080206 	tsteq	r8, r6, lsl #4
