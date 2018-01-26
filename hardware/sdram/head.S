@@ -45,7 +45,7 @@ memsetup:
 
     mov r1,     #MEM_CTL_BASE       @ 存储控制器的13个寄存器的开始地址
     adrl    r2, mem_cfg_val         @ 这13个值的起始存储地址
-    add r3,     r1, #52             @ 13*4 = 54
+    add r3,     r1, #52            @ 13*4 = 52
 1:  
     ldr r4,     [r2], #4            @ 读取设置值，并让r2加4
     str r4,     [r1], #4            @ 将此值写入寄存器，并让r1加4
@@ -70,3 +70,4 @@ mem_cfg_val:
     .long   0x000000B1      @ BANKSIZE
     .long   0x00000030      @ MRSRB6
     .long   0x00000030      @ MRSRB7
+
