@@ -17,9 +17,16 @@
  * 而连接文件mmu.lds中，指定了leds.o的运行时装载地址为0xB4004000，
  * 这样，head.S中的“ldr pc, =0xB4004000”就是跳去执行main函数。
  */
-static void wait(volatile  int  dly)
+static void wait( int  dly)
 {
-    for(; dly > 0; dly--);
+  volatile int j=0;
+
+
+    while(j<dly)
+	{
+		j++;
+	}
+	j=0;
 }
 
 int main(void)

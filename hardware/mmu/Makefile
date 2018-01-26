@@ -6,10 +6,10 @@ mmu.bin : $(objs)
 	arm-linux-objdump -D -m arm mmu_elf > mmu.dis
 	
 %.o:%.c
-	arm-linux-gcc -Wall -O2 -c -o $@ $<
+	arm-linux-gcc -Wall  -O2 -c -o $@ $<
 
 %.o:%.S
-	arm-linux-gcc -Wall -O2 -c -o $@ $<
+	arm-linux-gcc -Wall  -O2 -c -o $@ $<
 
 clean:
 	rm -f mmu.bin mmu_elf mmu.dis *.o		
